@@ -59,3 +59,43 @@ CMS Option (alternative): Sanity.io or Strapi for easy content management
 
 Deployment: Vercel (frontend), Render or Heroku (backend)
 
+
+🌟 1. Add Article Categories & Filters
+Let users filter articles by topics like:
+
+Menstrual Hygiene
+
+Period Myths
+
+Nutrition & Health
+
+First Period Guide
+
+Why? It enhances discoverability and keeps content organized.
+
+🔍 2. Add Search Functionality
+Let users search for articles or FAQs using keywords.
+
+Use Django’s icontains in views:
+
+python
+Copy
+Edit
+Article.objects.filter(title__icontains=query)
+💌 3. Add a Newsletter Signup (with Django Forms)
+Capture emails for updates on new articles, blogs, or videos.
+
+📝 4. Blog or Expert Advice Section
+Let gynecologists or educators post blogs. You already have a blog app scaffolded — time to activate it!
+
+🔒 5. Add Login/Register (for posting questions or saving articles)
+Basic user accounts using Django’s built-in User model.
+
+📱 6. Make It Mobile Responsive (Tailwind helps already)
+Add breakpoints if needed for smaller screens.
+
+✅ Recommendation:
+Start with Article Categories & Filters, it’s easy and makes the site feel more structured and professional.
+
+Would you like me to help you implement article categories now?
+

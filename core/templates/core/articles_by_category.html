@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="p-8 max-w-4xl mx-auto">
+  <h2 class="text-2xl font-bold mb-6 text-rose-600">Articles in "{{ category|title }}"</h2>
+
+  {% if articles %}
+    <div class="grid gap-6">
+      {% for article in articles %}
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="text-xl font-semibold text-rose-700 mb-2">{{ article.title }}</h3>
+          <p class="text-gray-700 text-sm mb-3">{{ article.summary|truncatechars:200 }}</p>
+          <a href="{% url 'article_detail' article.pk %}" class="text-rose-500 hover:underline">Read more</a>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-gray-600">No articles found in this category.</p>
+  {% endif %}
+</main>
+{% endblock %}
