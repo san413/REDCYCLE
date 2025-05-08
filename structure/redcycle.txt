@@ -1,0 +1,61 @@
+🌐 Project Name: "RedCycle" (You can rename it)
+🏗️ Main Pages and Features
+Homepage
+
+Welcome message
+
+Overview of menstrual health
+
+Featured articles/videos
+
+Quick links to FAQs and latest blogs
+
+Learn Section
+
+Topics: What is menstruation, puberty, PMS, hygiene, menstrual products
+
+Format: Articles with images and infographics
+
+Video Library
+
+Educational videos (embedded from YouTube or hosted)
+
+Categories like “Basics,” “Hygiene,” “Myths vs Facts”
+
+FAQs
+
+Common questions (categorized)
+
+Search functionality
+
+Infographics
+
+Visual education on the menstrual cycle, products, do’s and don’ts
+
+Expert Blog
+
+Articles written by doctors, gynecologists, or trained educators
+
+Categories: Health tips, mental wellness, nutrition
+
+Community
+
+Anonymous Q&A or forum (optional, can be added later)
+
+Contact a health expert
+
+About + Contact Page
+
+Mission, team, contact form, social media links
+
+💻 Tech Stack Suggestion
+Frontend: React + Tailwind CSS (for responsive design)
+
+Backend (optional for blog/admin): Node.js + Express or Django
+
+Database: MongoDB or PostgreSQL (if you want to store articles, blogs, user data)
+
+CMS Option (alternative): Sanity.io or Strapi for easy content management
+
+Deployment: Vercel (frontend), Render or Heroku (backend)
+
