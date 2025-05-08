@@ -40,6 +40,7 @@
         <div class="mb-4 p-4 bg-white rounded shadow">
           <h4 class="text-lg font-bold">{{ article.title }}</h4>
           <p class="text-sm text-gray-600">{{ article.summary|truncatechars:150 }}</p>
+          <a href="{% url 'article_detail' article.pk %}" class="text-blue-500 hover:underline">Read more</a>
         </div>
       {% empty %}
         <p>No articles available.</p>
@@ -53,6 +54,7 @@
         <div class="mb-3 p-3 bg-white border-l-4 border-rose-400 shadow-sm">
           <p class="font-bold">{{ q.question }}</p>
           <p>{{ q.answer }}</p>
+          <a href="{% url 'faq_detail' q.pk %}" class="text-blue-500 hover:underline">Read more</a>
         </div>
       {% empty %}
         <p>No FAQs added yet.</p>

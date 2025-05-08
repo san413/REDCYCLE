@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ article.title }} - RedCycle</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-rose-50 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md p-4 flex justify-between items-center">
+    <div class="text-2xl font-bold text-rose-600">RedCycle</div>
+    <ul class="flex space-x-4">
+      <li><a href="/" class="hover:text-rose-500 font-medium">Home</a></li>
+      <li><a href="#articles" class="hover:text-rose-500 font-medium">Articles</a></li>
+      <li><a href="#faq" class="hover:text-rose-500 font-medium">FAQs</a></li>
+      <li><a href="/admin" class="hover:text-rose-500 font-medium">Admin</a></li>
+    </ul>
+  </nav>
+
+  <!-- Article Content -->
+  <div class="p-8 max-w-4xl mx-auto">
+    <h1 class="text-4xl font-bold mb-4">{{ article.title }}</h1>
+    <div class="mb-8">
+      <p class="text-lg">{{ article.content }}</p>
+    </div>
+    <a href="/" class="text-rose-500 hover:underline">Back to Articles</a>
+  </div>
+
+</body>
+</html>
