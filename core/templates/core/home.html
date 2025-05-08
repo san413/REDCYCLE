@@ -7,16 +7,58 @@
 </head>
 <body class="bg-rose-50 text-gray-800">
 
-  <header class="bg-rose-600 text-white p-6 shadow-md">
-    <h1 class="text-3xl font-bold">RedCycle</h1>
-    <p class="text-sm">Empowering through menstrual health education</p>
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md p-4 flex justify-between items-center">
+    <div class="text-2xl font-bold text-rose-600">RedCycle</div>
+    <ul class="flex space-x-4">
+      <li><a href="/" class="hover:text-rose-500 font-medium">Home</a></li>
+      <li><a href="#articles" class="hover:text-rose-500 font-medium">Articles</a></li>
+      <li><a href="#faq" class="hover:text-rose-500 font-medium">FAQs</a></li>
+      <li><a href="/admin" class="hover:text-rose-500 font-medium">Admin</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="bg-rose-600 text-white p-8 text-center">
+    <h1 class="text-4xl font-bold">RedCycle</h1>
+    <p class="mt-2">Empowering through menstrual health education</p>
   </header>
 
-  <main class="p-8">
-    <h2 class="text-2xl font-semibold mb-4">Welcome to RedCycle</h2>
-    <p class="mb-4">We provide trusted resources, expert blogs, videos, and answers to your questions about menstruation, hygiene, and reproductive health.</p>
+  <main class="p-8 max-w-4xl mx-auto">
 
-    <a href="#" class="inline-block bg-rose-500 hover:bg-rose-600 text-white font-semibold py-2 px-4 rounded">Explore Articles</a>
+    <!-- Welcome -->
+    <section class="mb-12 text-center">
+      <h2 class="text-2xl font-semibold mb-2">Welcome to RedCycle</h2>
+      <p class="mb-4">We provide trusted resources, expert blogs, videos, and answers to your questions about menstruation, hygiene, and reproductive health.</p>
+      <a href="#articles" class="bg-rose-500 hover:bg-rose-600 text-white py-2 px-4 rounded">Explore Articles</a>
+    </section>
+
+    <!-- Latest Articles -->
+    <section id="articles" class="mb-12">
+      <h3 class="text-xl font-semibold mb-4">Latest Articles</h3>
+      {% for article in articles %}
+        <div class="mb-4 p-4 bg-white rounded shadow">
+          <h4 class="text-lg font-bold">{{ article.title }}</h4>
+          <p class="text-sm text-gray-600">{{ article.summary|truncatechars:150 }}</p>
+        </div>
+      {% empty %}
+        <p>No articles available.</p>
+      {% endfor %}
+    </section>
+
+    <!-- FAQs -->
+    <section id="faq">
+      <h3 class="text-xl font-semibold mb-4">Frequently Asked Questions</h3>
+      {% for q in faqs %}
+        <div class="mb-3 p-3 bg-white border-l-4 border-rose-400 shadow-sm">
+          <p class="font-bold">{{ q.question }}</p>
+          <p>{{ q.answer }}</p>
+        </div>
+      {% empty %}
+        <p>No FAQs added yet.</p>
+      {% endfor %}
+    </section>
+
   </main>
 
   <footer class="bg-gray-200 text-center p-4 mt-10">
