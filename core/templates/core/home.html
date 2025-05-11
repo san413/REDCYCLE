@@ -21,9 +21,15 @@
       <li><a href="#faq" class="hover:text-rose-500 font-medium">FAQs</a></li>
       <li><a href="/admin" class="hover:text-rose-500 font-medium">Admin</a></li>
     </ul>
-    <button id="darkModeToggle" class="ml-4 px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded transition">
-      Switch to Dark Mode
-    </button>
+    <button id="darkModeToggle" class="ml-4 flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded transition">
+      <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-10H21m-18 0H3m15.36 6.36l-.7.7M6.34 6.34l-.7-.7m0 13.72l.7-.7M17.66 6.34l.7-.7M12 7a5 5 0 100 10 5 5 0 000-10z" />
+      </svg>
+      <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M17.293 13.293a8 8 0 01-10.586-10.586A8.001 8.001 0 1017.293 13.293z" />
+      </svg>
+      <span id="toggleLabel">Switch to Dark Mode</span>
+    </button>    
   </nav>
 
   <!-- Hero -->
@@ -98,37 +104,29 @@
 
   <!-- Scripts -->
   <script>
-    // Live Date & Time
-    function updateDateTime() {
-      const now = new Date();
-      const options = {
-        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-        hour: '2-digit', minute: '2-digit', second: '2-digit'
-      };
-      document.getElementById('datetime').innerText = now.toLocaleString('en-US', options);
-    }
-    setInterval(updateDateTime, 1000);
-    updateDateTime();
-
-    // Dark Mode Toggle
     const toggle = document.getElementById('darkModeToggle');
-    function updateToggleLabel() {
-      toggle.textContent = document.documentElement.classList.contains('dark')
-        ? 'Switch to Day Mode'
-        : 'Switch to Dark Mode';
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+    const label = document.getElementById('toggleLabel');
+  
+    function updateThemeDisplay() {
+      const isDark = document.documentElement.classList.contains('dark');
+      sunIcon.classList.toggle('hidden', !isDark);
+      moonIcon.classList.toggle('hidden', isDark);
+      label.textContent = isDark ? 'Switch to Day Mode' : 'Switch to Dark Mode';
     }
-
+  
     toggle.addEventListener('click', () => {
       document.documentElement.classList.toggle('dark');
       localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
-      updateToggleLabel();
+      updateThemeDisplay();
     });
-
+  
     if (localStorage.getItem('theme') === 'dark') {
       document.documentElement.classList.add('dark');
     }
-
-    updateToggleLabel();
-  </script>
+  
+    updateThemeDisplay();
+  </script>  
 </body>
 </html>
